@@ -11,23 +11,59 @@ window.onload = function() {
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
-        // Load an image and call it 'logo'.
-        game.load.image( 'background', 'assets/background.png' );
         game.load.spritesheet( 'player', 'assets/miner.png',32,48);
         game.load.spritesheet( 'gem', 'assets/diamond.png',50,48);
+        game.load.audio('escape_music', 'assets/escape_from_ganon_castle.mp3');
+        game.load.audio('gem_music', 'assets/cb_crystal.mp3');
+        game.load.tilemap('tilemap', 'assets/mine_background.json', null, Phaser.Tilemap.TILED_JSON);
+        game.load.image('border_tiles', 'assets/mine_borders2.png');
+        game.load.image('basic_tiles', 'assets/basic_tiles.png');
     }
     
     var player;
     var cursors;
     var hud;
+    var TOTAL_TIME = 200;
+    var MESSAGE_TIME = 5;
+    var TOTAL_GEMS = 0;
+    var MAX_GEMS = 15;
     var total_time;
     var total_gems;
     var gems;
+    var infotext;
+    var music;
+    var gem_music;
+    var BEGINTEXT = 'FIND 15 \nGEMS BEFORE\nMINE COLLAPSES';
+    var border;
+    var map;
 
     function create() {
 
-        //Set up game enviroment
-        game.add.tileSprite(0, 0, 1920, 1920, 'background');
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+ 
+        //Change the background colour
+        game.stage.backgroundColor = "#a9f0ff";
+ 
+
+        /**TAKEN FROM JOSH MORONY Create a Running Platformer Game in Phaser with Tilemaps**/
+        /** *************************************************************************    **/
+        //Add the tilemap and tileset image. The first parameter in addTilesetImage
+        //is the name you gave the tilesheet when importing it into Tiled, the second
+        //is the key to the asset in Phaser
+        map = game.add.tilemap('tilemap');
+        map.addTilesetImage('basic', 'basic_tiles');
+        map.addTilesetImage('border', 'border_tiles');
+ 
+        //Add both the background and ground layers. We won't be doing anything with the
+        //GroundLayer though
+        backgroundlayer = map.createLayer('BackgroundLayer');
+
+        groundLayer = map.createLayer('GroundLayer');
+ 
+        //Before you can use the collide function you need to set what tiles can collide
+        map.setCollisionBetween(0, 4000, true, 'GroundLayer');
+        /**********************************************************************************/
+
 
         game.world.setBounds(0, 0, 1920, 1920);
 
@@ -35,12 +71,10 @@ window.onload = function() {
 
         player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
 
-        //game.physics.p2.enable(player);
         game.physics.arcade.enable(player);
         player.enableBody = true;
+        player.body.collideWorldBounds = true;
         player.physicsBodyType = Phaser.Physics.ARCADE;
-
-        //player.body.fixedRotation = true;
 
         cursors = game.input.keyboard.createCursorKeys();
 
@@ -55,21 +89,31 @@ window.onload = function() {
             var gem = gems.create(game.world.randomX, game.world.randomY, 'gem', 0);
         }
 
-        //  Now using the power of callAll we can add the same animation to all coins in the group:
+
+        //  Now using the power of callAll we can add the same animation to all gems in the group:
         gems.callAll('animations.add', 'animations', 'spin', [0,1,2,3,5,6,7], 10, true);
 
         //  And play them
         gems.callAll('animations.play', 'animations', 'spin');
 
         //Draw Hub Display
-        var style = { font: "24px Arial", fill: "#ffffff", align: "center" }
+        var style1 = { font: "24px Arial", fill: "#ffffff", align: "center" };
+        var style2 = { font: "60px Arial", fill: "#ffffff", align: "center" };
 
-        hud = game.add.text(32, 32, 'Timer', style);
-        total_time = 6;
-        total_gems = 0;
+        hud = game.add.text(32, 32, 'Timer', style1);
+        infotext = game.add.text(32,32, BEGINTEXT, style2);
+        total_time = TOTAL_TIME;
+        total_gems = TOTAL_GEMS;
+
+        
 
         hud.fixedToCamera = true;
         hud.cameraOffset.setTo(32, 32);
+
+        infotext.fixedToCamera = true;
+        infotext.cameraOffset.setTo(163, 150);
+
+
 
         //  Create our Timer
         timer = game.time.create(false);
@@ -81,6 +125,10 @@ window.onload = function() {
         //  It won't start automatically, allowing you to hook it to button events and the like.
         timer.start();
 
+        music = game.add.audio('escape_music');
+        gem_music = game.add.audio('gem_music');
+
+        music.play();
 
          //  Our two animations, walking left and right.
         player.animations.add('left', [3, 4, 5], 10, true);
@@ -101,11 +149,22 @@ window.onload = function() {
 
     function updateTime() {
 
+        if(!music.isPlaying){   
+         music.play(); 
+        }
+
         total_time--;
-        if(total_time == 0){
+        if(total_time === (TOTAL_TIME - MESSAGE_TIME)){
+            infotext.text = '';
+        }
+        if(total_time % 10 === 0){
+            game.camera.shake(0.05, 500);
+        }
+        if(total_time === 0){
             //  You can set your own fade color and duration
             timer.destroy();
             game.camera.fade(0x000000, 4000);
+            infotext.text = '    GAME OVER';
 
         }
 
@@ -119,19 +178,27 @@ window.onload = function() {
 
     function update() {
 
-        //player.body.setZeroVelocity();
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
+
         game.physics.arcade.collide(player, gems, gemCollision, null, this)
+        game.physics.arcade.collide(player, groundLayer);
+
         hud.text = "  Timer: " + total_time + "\nGems: " + total_gems;
+
+        if(total_gems===MAX_GEMS){
+            //  You can set your own fade color and duration
+            timer.destroy();
+            game.camera.fade(0x000000, 4000);
+            infotext.text = '    YOU WIN';
+        }
 
         if (cursors.up.isDown)
         {
-            //player.body.moveUp(300);
             player.body.velocity.y = -300
             player.animations.play('up');
         }
-        else if (cursors.down.isDown)
+        else if (cursors.down.isDown && !player.body.blocked.down)
         {
             player.body.velocity.y = 300
             player.animations.play('down');
@@ -154,27 +221,32 @@ window.onload = function() {
           
     }
 
-//  Called when player collects gems
+//Called when player collects gems
 function gemCollision(player,gem) {
 
     gem.kill();
+    gem_music.play();
     total_gems++;
 
 }
 
+//Called when game needs to be reset
 function resetGame(){
 
 
     //DESTROY AND RESET GAME
     gems.destroy('true','true');
 
-    total_time = 100;
-    total_gems = 0;
+    total_time = TOTAL_TIME;
+    total_gems = TOTAL_GEMS;
+    infotext.text = BEGINTEXT;
 
     //  Create our Timer
     timer = game.time.create(false);
     timer.loop(1000, updateTime, this);
     timer.start();
+
+    music.restart();
 
     for(var i=0;i<20;i++){
 
@@ -187,8 +259,7 @@ function resetGame(){
     game.camera.resetFX();
 
 
-}
+    }
 
     
-
 };
