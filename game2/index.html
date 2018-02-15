@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Why Did the Chicken Cross the Road?</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+<ul>
+	<li> A chicken is crossing the road and the player is playing to figure out why</li>
+</ul>
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+<ul>
+	<li> I used random group generators to make different cars random with different speeds</li>
+</ul>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+<ul>
+	<li> I learned how to make simple ai for cars and how make buttons to control players</li>
+</ul>
+What was the easiest or hardest part of making it?
+	<ul>
+	<li> The easiest part was creating the background and animations
+
+	</ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>Loading screen: self-made</li>
+<li>All buttons: self-made</li>
+<li>Street Background image: self-made</li>
+<li>Chicken Sprites <a href="https://i.imgur.com/jODGJn4.png">Chicken Sprites</a></li>
+<li>Car Sprites: <a href="http://unluckystudio.com/wp-content/uploads/2015/01/preview_carspritespack.jpg">Car Sprite pack</a></li>
+<li>Chick fil A symbol <a href="https://i.ytimg.com/vi/IXQTAOS6dtg/maxresdefault.jpg">Chicken Sprites</a></li>
+<li>Background loading image: <a href="http://getwallpapers.com/wallpaper/full/e/7/e/1029943-free-download-beautiful-background-pictures-1920x1200-1080p.jpg">Background Loading Image</a></li>
+<li>Music: "Metropolis" Kevin MacLeod (<a href="http://www.orangefreesounds.com/clucking-chicken/">Chicken Sound</a>). City music <a href="https://downloads.khinsider.com/game-soundtracks/album/ratchet-and-clank/05%2520-%2520Kerwan%2520-%2520Metropolis.mp3">Ratchet and Clank Metropolis</a></li>
+<li>Music: Kokiri Forest (<a href="http://66.90.93.122/ost/legend-of-zelda-ocarina-of-time-original-sound-track/klnvszfwyn/06%20-%20Kokiri%20Forest.mp3">Kokiri Forest</a>)
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li>The code for this example is adapted from the <a href="https://github.com/photonstorm/phaser/tree/v2.6.2/resources/Project%20Templates/Basic">Phaser Basic Project Template</a></li>
+<li> Also the code from template minimal gamestate functional was used as a foundation for this game</li>
+<li> This game is a cool shoutout to the original Frogger game where you move across the city</li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+	<li> A chicken is crossing the road and the player is playing to figure out why
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+<ul>
+	<li> The chicken theme
+</ul>
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+	<li> Input = buttons; Randomness = false, genre = puzzle, play style = Artist</li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+	<li> Being able to navigate through moving cars</li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+<ul>
+	<li> I want players to have a good time and laugh as they try to figure out the oldest question about the chicken</li>
+</ul>
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+	<li> The player can move by clicking on the buttons on the screen. The player must move to the right while avoiding the cars. If the player is hit, the level will restart. Else the player will get a message that will answer the question of the game</li>
+</ul>
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+	<li> Waiting for the right time to go through cars</li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+<ul>
+	<li> This game is about a chicken and its quest to cross the road. On the way, he may be killed by cars. If so he may never figure out he question he is pondering. The chicken is determined to cross the road and know why</li>
+</ul>
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+	<li> This game reaches the casual gamers looking for fun and a good laugh</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+	<li> It takes about 2 to 3 minutes play the game </li>
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>

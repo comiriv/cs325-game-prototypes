@@ -181,7 +181,7 @@ window.onload = function() {
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
 
-        game.physics.arcade.collide(player, gems, gemCollision, null, this)
+        game.physics.arcade.collide(player, gems, gemCollision, null, this);
         game.physics.arcade.collide(player, groundLayer);
 
         hud.text = "  Timer: " + total_time + "\nGems: " + total_gems;
