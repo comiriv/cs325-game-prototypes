@@ -43,14 +43,14 @@ GameStates.makePreloader = function( game ) {
             game.load.spritesheet('leftButton', 'assets/left_button.png',88,62);
             game.load.spritesheet('startButton', 'assets/start_button.png',220,87);
 
-            game.load.image('ambulance','assets/Ambulance.png'); 
-            game.load.image('audi','assets/Audi.png');
-            game.load.image('black_viper','assets/Black_viper.png');
-            game.load.image('mini_truck','assets/Mini_truck.png');
-            game.load.image('mini_van','assets/Mini_van.png');
-            game.load.image('police','assets/Police.png');
-            game.load.image('taxi','assets/taxi.png');
-            game.load.image('truck','assets/truck.png');
+            game.load.image('ambulance','assets/am.png'); 
+            game.load.image('audi','assets/au.png');
+            game.load.image('black_viper','assets/bv.png');
+            game.load.image('mini_truck','assets/mt.png');
+            game.load.image('mini_van','assets/mv.png');
+            game.load.image('police','assets/po.png');
+            game.load.image('taxi','assets/ta.png');
+            game.load.image('truck','assets/tr.png');
             game.load.image('background','assets/background.png');
             game.load.image('goal','assets/goal.png')
 
