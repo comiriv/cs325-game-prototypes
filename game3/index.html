@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Sonic's Most Wanted Chao?</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+<ul>
+	<li> Finding little creatures called chaos that are trying to hide among their peers kinda of like hide and go seek</li>
+</ul>
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+<ul>
+	<li> I store layers of sprites in an array, and I increment the size of the layer array to make the game harder. Mostly everything is randomized.</li>
+</ul>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+<ul>
+	<li> I learned how to make a fun dectective game that anyone can play</li>
+</ul>
+    What was the easiest or hardest part of making it?
+	<ul>
+	<li> The easiest part was the animations and sound effects</li>
+	<li> The hardest part was the layer system and random number array</li>
+	</ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>Loading screen: Provided in gamestate functional folder</li>
+<li>Main Menu screen: self made
+<li>Start button self made
+<li>Wanted Poster <a href="http://www.powerpointhintergrund.com/download/wanted-poster-reward-image-10727">Wanted Poster</a></li>
+<li>Chao and Sonic <a href="https://orig00.deviantart.net/a7a2/f/2012/323/b/d/sonic_and_chao_by_shoppaaaa-d5lhbyr.jpg">Chao and Sonic Background</a></li>
+<li>Chao faces <a href="https://orig00.deviantart.net/60d2/f/2007/101/4/9/chao_army_faces_by_darkmetaller.png">Chao faces</a></li>
+<li>Chao garden Music <a href="https://chao.hippotank.com/media/music/Chao%20Garden%20Extended%20Mix.mp3">Chao Garden music</a></li>
+<li>Chill music <a href="http://galactic-voyage.com/Music1/Knights%20of%20the%20Old%20Republic%20II-The%20Sith%20Lords/35_-_iziz_cantina.mp3">Game music</a></li>
+<li>Chao screaming Effect (<a href="http://www.soundboard.com/sb/sound/139241">Chao Screaming effect</a>)
+<li>Laugh Effect (<a href="http://themushroomkingdom.net/media/sm64/wav">Laugh effect</a>)
+
+
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li> The code from  template minimal gamestate functional was used as a foundation for this game</li>
+<li> Borrowed code for random number array generator <a href="https://stackoverflow.com/questions/5836833/create-a-array-with-random-values-in-javascript">Random Array Number Generator function</a> </li> 
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+	<li> Sonic is trying to find as many wanted chao as possible to collect.
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+<ul>
+	<li> The caught theme
+</ul>
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+	<li> Input = mouse; Randomness = true, genre = detective, play style = Competitive</li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+	<li> Clicking on images of chao that are hiding</li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+<ul>
+	<li> I want players to experience the fun of simple detective work</li>
+</ul>
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+	<li> The player can click on chao images that match the wanted poster. If he clicks the right chao, he is awarded points and time extended else he loses time. When time runs out the hi score is displayed and the game is over</li>
+</ul>
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+	<li> Don't be anxious to click on the wanted chao because he may be waiting behind his peers. Its better to wait then get time deducted. Don't wait too long though</li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+<ul>
+	<li> This game is set in a world where the famous video game character Sonic the Hedgehog and little creatures called  chao and exist. Chao are little cute creatures that Sonic likes to collect. Sonic wants to find particular chaos that he wants to capture. The player represents him trying to capture the chaos</li>
+</ul>
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+	<li> This game reaches the casual gamers looking for fun and a good laugh</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+	<li> It takes about 2 to 3 minutes play the game </li>
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>
