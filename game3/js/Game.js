@@ -83,8 +83,7 @@ GameStates.makeGame = function( game, shared ) {
     function onDown(sprite,pointer){
 
 
-        var pos_x;
-        var pos_y;
+        var pos_x        var pos_y;
 
         //If this is the chao we are looking for
         if(sprite.frame === wanted_chao){
