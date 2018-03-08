@@ -27,7 +27,7 @@ window.onload = function() {
     var player;
     var cursors;
     var hud;
-    var TOTAL_TIME = 1000;
+    var TOTAL_TIME = 10;
     var MESSAGE_TIME = 5;
     var TOTAL_GEMS = 0;
     var MAX_GEMS = 20;
