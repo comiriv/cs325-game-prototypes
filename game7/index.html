@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Souveneir Hunt</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+<ul>
+	<li> Traveling all over the world in a race to collect souveneirs</li>
+</ul>
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+<ul>
+	<li> Many arrays are used to keep track of player positions and spaces that the player lands on</li>
+</ul>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+<ul>
+	<li> I learned how to make my first digital board game from scratch</li>
+</ul>
+    What was the easiest or hardest part of making it?
+	<ul>
+	<li> The easiest part was making the board tiles and animations from scratch</li>
+	<li> The hardest part was creating the board turn based system</li>
+	</ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>Loading Bar: Provided in gamestate functional folder</li>
+<li>Board Tiles: self made</li>
+<li>Main Menu screen: self made</l.
+<li>Start button self made
+<li>Loading screen <a href="http://c8.alamy.com/comp/DB4KAX/souvenir-shop-in-san-gimignano-italy-DB4KAX.jpg">Loading screen</a></li>
+<li>Title screen <a href="https://www.designwrites.law/wp-content/uploads/2018/01/souvenirs.jpg">Title screen</a></li>
+<li>Chao garden Music <a href="https://chao.hippotank.com/media/music/Chao%20Garden%20Extended%20Mix.mp3">Chao Garden music</a></li>
+
+
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li> The code from  template minimal gamestate functional was used as a foundation for this game</li>
+<li> Borrowed code for random number array generator <a href="https://stackoverflow.com/questions/5836833/create-a-array-with-random-values-in-javascript">Random Array Number Generator function</a> </li> 
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+	<li> Players are competing to collect the most souvenirs
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+<ul>
+	<li> 6 months to live theme
+</ul>
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+	<li> Input = Keyboard; Randomness = true, genre = Board Game, play style = Competitive</li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+	<li> Basic online board game with two buttons to move and do an action</li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+<ul>
+	<li> I want players to experience the fun strategizing against other players/li>
+</ul>
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+	<li> The player will receive a roll at the beginning of their turn that says how many spaces they can move. Pressing the SPACE button will move them in a clockwise faction till their roll is 0. Along the way, if they pass a plane, bus, or train station, they can press ENTER to use the station provided that it has been unused and they can afford it (Bus - 100, Train - 150, Plane - 200). If the player lands on a nontrain station, they will receive the reward or consequence of that space (Either money or they get robbed). After that the next player's turn starts with his roll. This process continues for 15 rounds or until all the plane and bus stations are used up.</li>
+</ul>
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+	<li> It is good to save up money as you need it to use the stations. Try to prioritize plane spaces over train and bus stations as they will yield more souveneirs but also cost more</li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+<ul>
+	<li> This game is set in the United States. Each player is trying to collect souvneirs before they die in 6 months. There are obstacles like areas where players can lose souveneirs and competition for getting souvenirs first. The players who get the most souveneirs will have accomplished their goal and the others will fail</li>
+</ul>
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+	<li> This game reaches the strategic gamers who like to play board games</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+	<li> It takes around 5 to 10 minutes</li>
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>
