@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Battle of the Elements</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+<ul>
+	<li> Using different element's strengths and weaknesses to battle other players</li>
+</ul>
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+<ul>
+	<li> Keeping track of the advantages and disadvantges of each element</li>
+</ul>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+<ul>
+	<li> I learned how to make a really fun card game</li>
+</ul>
+    What was the easiest or hardest part of making it?
+	<ul>
+	<li> The easiest part was the cards</li>
+	<li> The hardest part was making the card system</li>
+	</ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>Loading Screen <a href="https://www.wallpaperup.com/uploads/wallpapers/2014/01/08/219931/dc75cb88c3c8eed7a111207e3383ab5f-1000.jpg">Link</a></li>
+<li>Main Menu screen <a href="https://ih0.redbubble.net/image.56236322.4106/pp,550x550.jpg">Link</a></li>
+<li>Start button self made</li>
+<li>Cards self made</li>
+<li>Chao garden Music <a href="https://chao.hippotank.com/media/music/Chao%20Garden%20Extended%20Mix.mp3">Chao Garden music</a></li>
+<li>Chill music <a href="http://galactic-voyage.com/Music1/Knights%20of%20the%20Old%20Republic%20II-The%20Sith%20Lords/35_-_iziz_cantina.mp3">Game music</a></li>
+
+
+
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li> The code from  template minimal gamestate functional was used as a foundation for this game</li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+	<li> Players are competing with element cards to try to defeat each other
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+<ul>
+	<li> Element theme
+</ul>
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+	<li> Input = mouse; Randomness = true, genre = card game, play style = Competitive</li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+	<li> Clicking on element cards to beat other players</li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+<ul>
+	<li> I want players to experience the fun of battling each other with the power of the elements</li>
+</ul>
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+	<li> Each player starts with 20 health points. Every three rounds the player order alternates. On a player's turn, he can either click the bottom deck which picks a random card of any element or click one of the top decks which choose  a random card of a specific element (Which gives him better chances of getting card he wants). If he chooses the top deck, he won't be able choose from it for 3 rounds (So choose wisely). After both players choose a card, the results are determined based on card action and element combination. Note: Fire weakens Air, Air weakens Earth, Earth weakens Water, and Water weakens Fire. The first player with 0 health loses. </li>
+</ul>
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+	<li> If a player has the last turn in a round, he should use the top deck wisely to choose a stronger element to weaken other player's card action (attack,defense,heal) by half
+		Ex. If P1 picks Air, P2 should pick Fire (HINT: Stronger element is to the left of weaker element in card deck order)</li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+<ul>
+	<li> This game is set in a world where there are only four elements of fire, water, air, and earth. Each player can wield all four elements and are constantly at battle. The winner of the battles determines who is the best wielder of all four elements</li>
+</ul>
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+	<li> This game reaches the strategic card gamers looking to be competitive</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+	<li> It takes about 2 to 3 minutes play the game </li>
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>

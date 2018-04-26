@@ -30,7 +30,7 @@ GameStates.makeGame = function( game, shared ) {
     var key_A = null;
     var key_Enter = null;
     var round = 1;
-    var MAX_ROUNDS = 15;
+    var MAX_ROUNDS = 1;
     var end_of_game = false;
     var end_timer = 2;
 
@@ -57,7 +57,7 @@ GameStates.makeGame = function( game, shared ) {
             ;
 
             //Go back to main menu
-            game.state.start("Game");
+            game.state.start("MainMenu");
 
 
     }
